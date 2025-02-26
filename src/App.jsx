@@ -6,7 +6,7 @@ import ReadKolt from './Components/Read/ReadKolt';
 
 
 function App() {
-  
+
   const [koltData, setKoltData] = useState(_ => {
     const sKolt = localStorage.getItem('kolts');
     return sKolt ? JSON.parse(sKolt) : [];
@@ -18,11 +18,13 @@ function App() {
 
   return (
     <>
-      <div>
-        <CreateKolt koltData={koltData} setKoltData={setKoltData} /> 
-      </div>
-      <div>
-        <ReadKolt koltData={koltData} setKoltData={setKoltData} />
+      <div className='app-container'>
+        <div>
+          <CreateKolt koltData={koltData} setKoltData={setKoltData} />
+        </div>
+        <div>
+          <ReadKolt koltData={koltData} setKoltData={setKoltData} />
+        </div>
       </div>
     </>
   )

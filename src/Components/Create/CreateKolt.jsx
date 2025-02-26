@@ -46,47 +46,51 @@ export default function CreateKolt({ koltData, setKoltData }) {
 
     return (
         <>
-            <div>
+            <div className="create-kolt-container">
                 <h2>New Kolt</h2>
                 <form onSubmit={addKolt}>
-                    <div>
-                        <label htmlFor="">Time last used</label>
-                        <DatePicker
-                            selected={parseDateTime(lastUseTime)}
-                            maxDate={new Date()}
-                            minTime={new Date(new Date().setHours(0, 0, 0, 0))}
-                            maxTime={parseDateTime(lastUseTime).toDateString() === new Date().toDateString() ? new Date() : new Date(new Date().setHours(23, 59, 59, 999))}
-                            onChange={c => setLastUseTime(formatDateTime(c))}
-                            showTimeSelect
-                            timeFormat="HH:mm"
-                            dateFormat="yyyy-MM-dd HH:mm"
-                            timeIntervals={1}
-                            showMonthDropdown
-                            showYearDropdown
-                            dropdownMode="select"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="mileage">Distance covered (km)</label>
-                        <input
-                            type="number"
-                            name="mileage"
-                            id="mileage"
-                            step={0.01}
-                            min={0}
-                            value={totalRideKilometers}
-                            onChange={c => {
-                                const value = c.target.value;
-                                if (/^\d*\.?\d{0,2}$/.test(value)) {
-                                    setTotalKilometers(value);
-                                }
-                            }}
-                            onKeyDown={e => {
-                                if (e.key === "e" || e.key === "-" || e.key === "+") {
-                                    e.preventDefault();
-                                }
-                            }}
-                        />
+                    <div className="form-inside">
+                        <div>
+                            <label>Time last used</label>
+                            <DatePicker
+                                selected={parseDateTime(lastUseTime)}
+                                maxDate={new Date()}
+                                minTime={new Date(new Date().setHours(0, 0, 0, 0))}
+                                maxTime={parseDateTime(lastUseTime).toDateString() === new Date().toDateString() ? new Date() : new Date(new Date().setHours(23, 59, 59, 999))}
+                                onChange={c => setLastUseTime(formatDateTime(c))}
+                                showTimeSelect
+                                timeFormat="HH:mm"
+                                dateFormat="yyyy-MM-dd HH:mm"
+                                timeIntervals={1}
+                                showMonthDropdown
+                                showYearDropdown
+                                dropdownMode="select"
+                            />
+                        </div>
+
+                        <div>
+                        <label>Distance covered (km)</label>
+                            <input
+                                type="number"
+                                name="mileage"
+                                id="mileage"
+                                step={0.01}
+                                min={0}
+                                value={totalRideKilometers}
+                                onChange={c => {
+                                    const value = c.target.value;
+                                    if (/^\d*\.?\d{0,2}$/.test(value)) {
+                                        setTotalKilometers(value);
+                                    }
+                                }}
+                                onKeyDown={e => {
+                                    if (e.key === "e" || e.key === "-" || e.key === "+") {
+                                        e.preventDefault();
+                                    }
+                                }}
+                            />
+                        </div>
+                        
                     </div>
                     <button type="submit" className="button-17">Add Kolt</button>
                 </form>
