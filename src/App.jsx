@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import './sass/styles.scss'
+import CreateKolt from './Components/Create/CreateKolt';
+
 
 function App() {
   
@@ -15,7 +18,7 @@ function App() {
   return (
     <>
       <div>
-
+        <CreateKolt koltData={koltData} setKoltData={setKoltData} /> 
       </div>
     </>
   )
