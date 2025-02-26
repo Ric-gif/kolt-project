@@ -16,8 +16,10 @@
     "@mui/x-date-pickers": "^7.27.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
     "react": "^19.0.0",
+    "react-datepicker": "^8.1.0",
     "react-dom": "^19.0.0",
     "sass": "^1.85.1"
   },
