@@ -88,8 +88,6 @@ export default function CreateKolt({ koltData, setKoltData }) {
                             }}
                         />
                     </div>
-                    <div>
-                    </div>
                     <button type="submit" className="button-17">Add Kolt</button>
                 </form>
             </div>

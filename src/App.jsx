@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import './sass/styles.scss'
 import CreateKolt from './Components/Create/CreateKolt';
+import ReadKolt from './Components/Read/ReadKolt';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
     <>
       <div>
         <CreateKolt koltData={koltData} setKoltData={setKoltData} /> 
+      </div>
+      <div>
+        <ReadKolt koltData={koltData} setKoltData={setKoltData} />
       </div>
     </>
   )
