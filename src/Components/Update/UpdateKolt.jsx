@@ -57,12 +57,15 @@ export default function UpdateKolt({ kolt, koltData, setKoltData }) {
                                 <h5 className="modal-title">Modal title</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleCloseModal}></button>
                             </div>
+
                             <div className="modal-body">
                                 <div>
+
                                     <div>
                                         <label className="form-check-label">Is busy</label>
                                         <input type="checkbox" className="form-check-input" checked={inUse} onChange={s => setInUse(s.target.checked)} />
                                     </div>
+
                                     <div>
                                         <label htmlFor="">Time last used</label>
                                         <DatePicker
@@ -81,6 +84,7 @@ export default function UpdateKolt({ kolt, koltData, setKoltData }) {
                                             dropdownMode="select"
                                         />
                                     </div>
+
                                     <div>
                                         <div className="mb-3">
                                             <label className="form-label">Total Ride Kilometres</label>
@@ -103,6 +107,7 @@ export default function UpdateKolt({ kolt, koltData, setKoltData }) {
                                             }}
                                         />
                                     </div>
+
                                 </div>
                             </div>
                             <div className="modal-footer">
