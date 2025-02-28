@@ -3,6 +3,7 @@ import './App.css'
 import './sass/styles.scss'
 import CreateKolt from './Components/Create/CreateKolt';
 import ReadKolt from './Components/Read/ReadKolt';
+import ReadInfo from './Components/Read/ReadInfo';
 
 
 function App() {
@@ -19,11 +20,16 @@ function App() {
   return (
     <>
       <div className='app-container'>
-        <div>
-          <CreateKolt koltData={koltData} setKoltData={setKoltData} />
-        </div>
-        <div>
-          <ReadKolt koltData={koltData} setKoltData={setKoltData} />
+        <h1>Kolt Management</h1>
+        <div className='container'>
+          <div className='left-column'>
+            <CreateKolt koltData={koltData} setKoltData={setKoltData} />
+            <ReadInfo koltData={koltData}/>
+            
+          </div>
+          <div className='right-column'>
+            <ReadKolt koltData={koltData} setKoltData={setKoltData} />
+          </div>
         </div>
       </div>
     </>

@@ -1,153 +1,297 @@
+// Import Bootstrap’s SCSS
 @import "bootstrap/scss/bootstrap";
 
+// Define a modern dark theme palette
+$bg-dark: #121212;
+$primary: #1f1f1f;
+$secondary: #272727;
+$accent: #5BC0BE;
+$text-light: #e0e0e0;
+$border-color: #333333;
 
-/* CSS */
-.button-17 {
-  align-items: center;
-  appearance: none;
-  background-color: #fff;
-  border-radius: 24px;
-  border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
-  box-sizing: border-box;
-  color: #3c4043;
-  cursor: pointer;
-  display: inline-flex;
-  fill: currentcolor;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 48px;
-  justify-content: center;
-  letter-spacing: .25px;
-  line-height: normal;
-  max-width: 100%;
-  overflow: visible;
-  padding: 2px 24px;
-  position: relative;
-  text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto;
-  will-change: transform, opacity;
-  z-index: 0;
+// Global body styling
+body {
+  background: $bg-dark;
+  color: $text-light;
+  font-family: 'Roboto', sans-serif; // Modern font
+  margin: 0;
+  padding: 0;
 }
 
-.button-17:hover {
-  background: #F6F9FE;
-  color: #174ea6;
-}
-
-.button-17:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-  outline: none;
-}
-
-// .button-17:focus {
-//   outline: none;
-//   border: 2px solid #4285f4;
-// }
-
-.button-17:not(:disabled) {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):hover {
-  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
-}
-
-.button-17:not(:disabled):focus {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):active {
-  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
-}
-
-.button-17:disabled {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-
-.create-kolt-container {
+// App container styles
+.app-container {
+  padding: 2rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 25px;
-  // border: 1px solid gray;
-  width: 25vw;
-  min-width: fit-content;
-  height: 50vh;
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
-  -moz-box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
-  box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
 
-  h2 {
-    align-self: center;
+  h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
-  form {
-    align-self: center;
+  .container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    gap: 25px;
-    width: 100%;
-    height: 100vh;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
 
+    .left-column, .right-column {
+      background: $primary;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
 
-    .form-inside {
+    .left-column {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: auto 0;
-      gap: 25px;
-
-      label {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-      }
-
-      input {
-        border: none;
-        border-radius: 5px;
-        padding: 7px;
-        -webkit-box-shadow: 0px 0px 18px 2px rgba(29, 39, 227, 0.33);
-        -moz-box-shadow: 0px 0px 18px 2px rgba(29, 39, 227, 0.33);
-        box-shadow: 0px 0px 18px 2px rgba(29, 39, 227, 0.33);
-      }
+      gap: 1.5rem;
     }
 
-    button {
-      margin-top: auto;
+    .right-column {
+      flex: 2;
     }
   }
 }
 
-.read-kolt-container {
-  min-width: fit-content;
-  width: 65vw;
-  height: 90vh;
-  padding: 25px;
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
-  -moz-box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
-  box-shadow: 0px 0px 18px 10px rgba(29, 39, 227, 0.33);
+// Buttons
+.button-17 {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: $accent;
+  color: $bg-dark;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+
+  &:hover {
+    background: lighten($accent, 10%);
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
-.app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+// Form (CreateKolt) styling
+.create-form {
+  background: $primary;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input,
+    .react-datepicker-wrapper,
+    .react-datepicker__input-container input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      background: $secondary;
+      color: $text-light;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $accent;
+        outline: none;
+      }
+    }
+  }
+}
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+// Table (ReadKolt) styling
+table {
   width: 100%;
-  height: 100vh;
-  flex-wrap: wrap;
-  padding: 50px;
+  border-collapse: collapse;
+  background: $secondary;
+  color: $text-light;
+  border-radius: 8px;
+  overflow: hidden;
+  display: table; // Ensure table expands properly
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    background: $primary;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  tr:hover {
+    background: lighten($primary, 5%);
+  }
+}
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+// Table container with scroll and hidden scrollbar
+.table-container {
+  height: 700px; // Set a fixed height for the scrollable container
+  overflow-y: auto; // Enable vertical scrolling
+  padding-right: 10px; // Add padding to prevent content from hiding behind the scrollbar
+
+  /* Hide the scrollbar */
+  &::-webkit-scrollbar {
+    width: 0px; // Remove scrollbar width
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent; // Ensure the thumb is invisible
+  }
+}
+
+.sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+// Info display (ReadInfo) styling
+.read-info {
+  background: $primary;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  div {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+.modal {
+  height: 100%;
+
+  .modal-dialog {
+    .modal-content {
+      background-color: #333333;
+      .modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .modal-body-content {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+// Actions column (buttons for update/delete)
+.actions {
+  display: flex;
+  gap: 10px;
+
+  button {
+    background: $accent;
+    color: $bg-dark;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+
+    &:hover {
+      background: lighten($accent, 10%);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+
+
+// ===============================================================================================================
+// ===============================================================================================================
+// ===============================================================================================================
+
+// Responsive adjustments for smaller screens
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+
+    .left-column,
+    .right-column {
+      flex: 1 1 100%;
+    }
+  }
+
+  table thead {
+    display: none; // Hide headers on small screens
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 1rem;
+    background: $primary;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 1rem;
+    font-weight: bold;
+    text-align: left;
+  }
 }
